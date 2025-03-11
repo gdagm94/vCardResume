@@ -1888,3 +1888,66 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+/* Fix for text overflow in the title */
+
+/* Add this CSS to the end of your style.css file */
+.info-content .title {
+  color: var(--orange-yellow-crayola);
+  background: var(--border-gradient-onyx);
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-1);
+  z-index: 1;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  width: max-content;
+  max-width: 100%;
+  padding: 3px 12px;
+  border-radius: 8px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Ensure text is centered properly in smaller screens */
+@media (max-width: 767px) {
+  .info-content {
+    width: 100%;
+  }
+  
+  .info-content .title {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Fix for the info content container */
+.sidebar-info {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Additional fixes for larger screens */
+@media (min-width: 1250px) {
+  .info-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .info-content .title {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
