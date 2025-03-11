@@ -1951,3 +1951,63 @@ textarea.form-input::-webkit-resizer { display: none; }
     text-align: center;
   }
 }
+
+/* Add this CSS to your style.css file */
+
+/* Fix for profile picture display in mobile view */
+.avatar-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Specific mobile fixes */
+@media (max-width: 580px) {
+  /* Make profile container more compact */
+  .sidebar-info {
+    padding: 5px;
+    gap: 10px;
+  }
+  
+  /* Adjust avatar box size and positioning */
+  .avatar-box {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    border-radius: 15px;
+  }
+  
+  /* Make the image fit properly in the container */
+  .avatar-box img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+  }
+  
+  /* Adjust spacing for info content */
+  .info-content {
+    padding-left: 0;
+  }
+  
+  /* Adjust name size for mobile */
+  .info-content .name {
+    font-size: var(--fs-4);
+    margin-bottom: 5px;
+  }
+}
+
+/* Ensure proper sizing for the smallest screens */
+@media (max-width: 375px) {
+  .avatar-box {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+  }
+  
+  .avatar-box img {
+    width: 65px;
+    height: 65px;
+  }
+}
